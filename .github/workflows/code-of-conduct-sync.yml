@@ -10,10 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     # if: github.repository_owner == 'adoptium'
     steps:
-      - uses: adrianjost/files-sync-action@v1.4.1
+      - name: Sync files
+        uses: ./.github/actions/sync-files
         with:
-          FILE_PATTERNS: |
-            ^CODE_OF_CONDUCT.md
-          SRC_REPO: eclipse/.github
-          TARGET_REPOS: gdams/.github
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          username: gdams
+          email: john@example.com
