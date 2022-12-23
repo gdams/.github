@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     # if: github.repository_owner == 'adoptium'
     steps:
-      - uses: adrianjost/files-sync-action@v1.0.1
+      - uses: adrianjost/files-sync-action@v1.4.1
         with:
           FILE_PATTERNS: |
             ^CODE_OF_CONDUCT.md
           SRC_REPO: eclipse/.github
-          TARGET_REPOS: adoptium/.github
+          TARGET_REPOS: ${{ GITHUB_REPOSITORY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
