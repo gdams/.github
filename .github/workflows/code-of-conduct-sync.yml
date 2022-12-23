@@ -15,5 +15,5 @@ jobs:
           FILE_PATTERNS: |
             ^CODE_OF_CONDUCT.md
           SRC_REPO: eclipse/.github
-          TARGET_REPOS: ${GITHUB_REPOSITORY}
+          TARGET_REPOS: gdams/.github
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
