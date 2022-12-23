@@ -1,0 +1,19 @@
+name: Sync Files
+
+on:  
+  push:
+  schedule:
+    - cron: '0 0 * * *'  # every day at midnight
+
+jobs:
+  code-of-conduct:
+    runs-on: ubuntu-latest
+    # if: github.repository_owner == 'adoptium'
+    steps:
+      - uses: adrianjost/files-sync-action@v1.0.1
+        with:
+          FILE_PATTERNS: |
+            ^CODE_OF_CONDUCT.md
+          SRC_REPO: eclipse/.github
+          TARGET_REPOS: adoptium/.github
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
